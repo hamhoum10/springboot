@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
 @Entity
 public class Reservation implements Serializable {
     @Id
@@ -12,4 +14,6 @@ public class Reservation implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date annerUniversitaire;
     private boolean estValide;
+    @ManyToMany
+    private List <Etudiant> etudiants;
 }
