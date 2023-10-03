@@ -1,11 +1,10 @@
 package tn.esprit.springproject.entites;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
+
 @Entity
 public class Bloc implements Serializable {
     @Id
@@ -13,4 +12,9 @@ public class Bloc implements Serializable {
     private long idBloc;
     private String nomBloc;
     private long capacityBloc;
+    @ManyToOne
+    private Foyer foyer;
+
+    @OneToMany(mappedBy = "bloc")
+    private List<Chambre> chambres;
 }
