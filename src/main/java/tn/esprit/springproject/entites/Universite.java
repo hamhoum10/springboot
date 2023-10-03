@@ -1,9 +1,14 @@
 package tn.esprit.springproject.entites;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.io.Serializable;
 @Entity
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 public class Universite implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
