@@ -1,5 +1,6 @@
 package tn.esprit.springproject.entites;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,6 +26,7 @@ public class Foyer implements Serializable {
     @OneToOne
     private Universite universite;
     @OneToMany(mappedBy = "foyer")
+    @JsonIgnore
     private List<Bloc> blocs;
 
 }

@@ -10,6 +10,7 @@ public interface IFoyer {
     public List<Foyer>  findAllFoyer();
     public Foyer findFoyer(long idF);
     public void deleatFoyer (long idF);
+    public Foyer getFoyerByNom(String nom);
 
 
 }

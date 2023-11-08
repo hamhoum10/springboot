@@ -1,5 +1,6 @@
 package tn.esprit.springproject.services;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.springproject.entites.Foyer;
@@ -8,8 +9,9 @@ import tn.esprit.springproject.repositories.FoyerRepositorie;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class FoyerServicelmp implements IFoyer {
-    @Autowired
+
 private FoyerRepositorie foyerRepositorie;
 
 
@@ -37,5 +39,10 @@ private FoyerRepositorie foyerRepositorie;
     public void deleatFoyer(long idF) {
         foyerRepositorie.deleteById(idF);
 
+    }
+
+    @Override
+    public Foyer getFoyerByNom(String nom) {
+        return foyerRepositorie.findByNomFoyer(nom);
     }
 }

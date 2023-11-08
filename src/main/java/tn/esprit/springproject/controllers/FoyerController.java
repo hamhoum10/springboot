@@ -21,18 +21,22 @@ public class FoyerController {
     public Foyer updateFoyer(@RequestBody Foyer f){
         return  foyerServicelmp.updateFoyer(f);
     }
-    @GetMapping("/getallfoyer")
+    @GetMapping("/foyers")
     public List<Foyer> findAllFoyer(){
         return foyerServicelmp.findAllFoyer();
     }
-    @GetMapping("/getf/{idF}")
+    @GetMapping("/foyers/{idF}")
     public  Foyer findFoyerById(@PathVariable long idF){
         return foyerServicelmp.findFoyer(idF);
 
     }
-    @DeleteMapping("/delatef/{idF}")
+    @DeleteMapping("/delatefoyers/{idF}")
 public void deleateFoyer(@PathVariable long idF){
 
         foyerServicelmp.deleatFoyer(idF);
+}
+@GetMapping("/getfoyerbynom/{nom}")
+public Foyer getFoyerByNom(@PathVariable String nom){
+        return foyerServicelmp.getFoyerByNom(nom);
 }
 }
