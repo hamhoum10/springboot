@@ -46,6 +46,11 @@ public class ReservationController {
         return reservationServiceImp.findByEtudiantNomStartsWith(idF);
 
     }
+    @DeleteMapping("/delateReservation/{idF}")
+    public void deleateUniversite(@PathVariable String idF) {
+
+        reservationServiceImp.retrieveReservation(idF);
+    }
 
 
 }

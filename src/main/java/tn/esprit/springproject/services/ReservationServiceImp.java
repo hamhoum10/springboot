@@ -31,8 +31,10 @@ public class ReservationServiceImp implements  IReservation {
     }
 
     @Override
-    public Reservation retrieveReservation(long idReservation) {
-        return null;
+     public void  retrieveReservation(String idReservation) {
+        Reservation r = new Reservation();
+      r=  reservationRepo.findByIdReservation(idReservation);
+         reservationRepo.delete(r);
     }
 
 
@@ -45,5 +47,7 @@ public class ReservationServiceImp implements  IReservation {
     public List<Reservation> findByEtudiantNomStartsWith(String prefix) {
         return reservationRepo.findByEtudiantNomStartsWith(prefix);
     }
+
+
 
 }

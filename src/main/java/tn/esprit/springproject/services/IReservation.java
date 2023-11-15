@@ -12,9 +12,10 @@ public interface IReservation {
 
     Reservation updateReservation (Reservation res);
 
-    Reservation retrieveReservation (long idReservation);
+    void retrieveReservation (String idReservation);
      Reservation findByEtudiants_Nomet(String nom);
     List<Reservation> findByEtudiantNomStartsWith(String prefix);
+
 
 
 }
