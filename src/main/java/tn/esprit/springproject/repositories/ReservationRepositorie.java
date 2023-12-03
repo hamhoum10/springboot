@@ -12,5 +12,5 @@ import java.util.Set;
 public interface ReservationRepositorie extends JpaRepository <Reservation,String> {
     public Reservation findByIdReservation(String nom);
     public Reservation findByEtudiants_Nomet(String nom);
-    List<Reservation> findByEtudiantNomStartsWith(String prefix);
+
 }
